@@ -1,0 +1,15 @@
+html {
+    font-size: var(--fs-base);
+    font-family: var(--font-primary);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--on-background);
+    font-size: var(--fs-body-medium);
+    line-height: var(--lh-base);
+    height: 100vh;
+    height: 100dvh;
+}
