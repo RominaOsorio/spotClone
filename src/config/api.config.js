@@ -6,7 +6,7 @@ const BASE_URL = 'https://api.spotify.com/v1'
 
 // Spotify authentication token
 
-const TOKEN_BASE_URL = 'https://accounts.spotify.com/api/token'
+const TOKEN_BASE_URL = 'https://accounts.spotify.com/api'
 
 // Spotify client
 

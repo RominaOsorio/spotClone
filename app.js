@@ -5,12 +5,15 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const path = require('path')
 
+const app = express()
+const PORT = 3000
+
 // Routes
 
 const login = require('./src/routes/login.route')
+const auth = require('./src/routes/auth.route')
 
-const app = express()
-const PORT = 3000
+const authenticatedUser = require('./src/middlewares/auth_user.middleware')
 
 // EJS
 
@@ -26,6 +29,12 @@ app.use(express.json())
 // Login
 
 app.use('/login', login)
+
+// Auth
+
+app.use('/auth', auth)
+
+app.use(authenticatedUser)
 
 app.listen(PORT, () => {
   console.log(`Servidor inicializado en http://localhost:${PORT}`)
