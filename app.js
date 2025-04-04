@@ -12,8 +12,8 @@ const PORT = 3000
 
 const login = require('./src/routes/login.route')
 const auth = require('./src/routes/auth.route')
-
 const authenticatedUser = require('./src/middlewares/auth_user.middleware')
+const home = require('./src/routes/home.route')
 
 // EJS
 
@@ -35,6 +35,10 @@ app.use('/login', login)
 app.use('/auth', auth)
 
 app.use(authenticatedUser)
+
+// Home
+
+app.use('/', home)
 
 app.listen(PORT, () => {
   console.log(`Servidor inicializado en http://localhost:${PORT}`)

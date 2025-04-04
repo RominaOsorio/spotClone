@@ -1,7 +1,7 @@
+/* eslint-disable camelcase */
 'use strict'
 
 const axios = require('axios')
-// const querystring = require('querystring')
 
 const apiConfig = require('./api.config')
 
@@ -13,8 +13,24 @@ const token = axios.create({
   }
 })
 
-console.log('TOKEN_BASE_URL:', apiConfig.TOKEN_BASE_URL)
+// console.log('TOKEN_BASE_URL:', apiConfig.TOKEN_BASE_URL)
+
+const api = axios.create({ baseURL: apiConfig.BASE_URL })
+
+const getData = async (apiUrl, access_token) => {
+  try {
+    const response = await api.get(apiUrl, {
+      headers: {
+        Authorization: `Bearer ${access_token}`
+      }
+    })
+    return response
+  } catch (err) {
+    console.log(err)
+  }
+}
 
 module.exports = {
-  token
+  token,
+  getData
 }
