@@ -20,7 +20,14 @@
             <img src="<%= url %>" width="<%= width %>" height="<%= height %>" alt="<%= display_name %> profile" class="avatar">
             <div class="state-layer"></div>
             </button>
+
+            <%- include('./menu') %>
         </div>
 
+        <%- include('icon_btn', {
+            variant: 'clear',
+            icon: 'close',
+            dataAttr: 'data-search-close',
+        }) %>
 </div>
 
