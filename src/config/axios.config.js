@@ -26,7 +26,8 @@ const getData = async (apiUrl, access_token) => {
     })
     return response
   } catch (err) {
-    console.log(err)
+    console.error('Error en getData():', err.response?.data || err.message)
+    throw err
   }
 }
 
